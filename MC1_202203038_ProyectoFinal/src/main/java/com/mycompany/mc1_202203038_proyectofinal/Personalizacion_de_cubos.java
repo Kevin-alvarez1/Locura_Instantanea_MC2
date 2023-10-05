@@ -8,6 +8,10 @@ import static com.mycompany.mc1_202203038_proyectofinal.AppDataListas.cubo1List;
 import static com.mycompany.mc1_202203038_proyectofinal.AppDataListas.cubo2List;
 import static com.mycompany.mc1_202203038_proyectofinal.AppDataListas.cubo3List;
 import static com.mycompany.mc1_202203038_proyectofinal.AppDataListas.cubo4List;
+import static com.mycompany.mc1_202203038_proyectofinal.AppDataListas.cuboSolucion1;
+import static com.mycompany.mc1_202203038_proyectofinal.AppDataListas.cuboSolucion2;
+import static com.mycompany.mc1_202203038_proyectofinal.AppDataListas.cuboSolucion3;
+import static com.mycompany.mc1_202203038_proyectofinal.AppDataListas.cuboSolucion4;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
@@ -286,6 +290,23 @@ public void establecerValoresDesdeTemporales() {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Cubo 4");
 
+        cara1Cubo1.setText("rojo");
+        cara1Cubo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cara1Cubo1ActionPerformed(evt);
+            }
+        });
+
+        cara2Cubo1.setText("rojo");
+
+        cara3Cubo1.setText("blanco");
+
+        cara4Cubo1.setText("amarillo");
+
+        cara5Cubo1.setText("amarillo");
+
+        cara6Cubo1.setText("verde");
+
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Cara 1");
@@ -310,6 +331,15 @@ public void establecerValoresDesdeTemporales() {
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Cara 6");
 
+        cara5Cubo2.setText("amarillo");
+        cara5Cubo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cara5Cubo2ActionPerformed(evt);
+            }
+        });
+
+        cara6Cubo2.setText("verde");
+
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Cara 1");
@@ -330,9 +360,21 @@ public void establecerValoresDesdeTemporales() {
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Cara 5");
 
+        cara1Cubo2.setText("amarillo");
+
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Cara 6");
+
+        cara2Cubo2.setText("rojo");
+
+        cara3Cubo2.setText("amarillo");
+
+        cara4Cubo2.setText("verde");
+
+        cara5Cubo3.setText("verde");
+
+        cara6Cubo3.setText("rojo");
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 0, 0));
@@ -354,9 +396,26 @@ public void establecerValoresDesdeTemporales() {
         jLabel22.setForeground(new java.awt.Color(0, 0, 0));
         jLabel22.setText("Cara 5");
 
+        cara1Cubo3.setText("blanco");
+
         jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(0, 0, 0));
         jLabel23.setText("Cara 6");
+
+        cara2Cubo3.setText("rojo");
+
+        cara3Cubo3.setText("amarillo");
+        cara3Cubo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cara3Cubo3ActionPerformed(evt);
+            }
+        });
+
+        cara4Cubo3.setText("amarillo");
+
+        cara5Cubo4.setText("amarillo");
+
+        cara6Cubo4.setText("verde");
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 0, 0));
@@ -378,9 +437,17 @@ public void establecerValoresDesdeTemporales() {
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("Cara 5");
 
+        cara1Cubo4.setText("blanco");
+
         jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setText("Cara 6");
+
+        cara2Cubo4.setText("rojo");
+
+        cara3Cubo4.setText("blanco");
+
+        cara4Cubo4.setText("verde");
 
         VerCubosBoton.setText("Ver  cubos");
         VerCubosBoton.addActionListener(new java.awt.event.ActionListener() {
@@ -635,15 +702,141 @@ public void establecerValoresDesdeTemporales() {
     }//GEN-LAST:event_SalirBotonActionPerformed
 
     private void VerCubosBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerCubosBotonActionPerformed
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here:  
         ObtenerCarasCubo1(cubo1List);
         System.out.println("Aqui Empieza la lista1");
         for (String item : AppDataListas.cubo1List) {
             System.out.println(item);
         }
-        
+        llenarCuboSolucion1(cubo1List);
+        llenarCuboSolucion2(cubo2List);
+        llenarCuboSolucion3(cubo3List);
+        llenarCuboSolucion4(cubo4List);
+
     }//GEN-LAST:event_VerCubosBotonActionPerformed
+public static void llenarCuboSolucion1(LinkedList<String> cubo1List) {
+    // Asegura que haya suficientes elementos en cubo1List para crear un objeto Cubo1
+    if (cubo1List.size() >= 6) {
+        String cara1 = cubo1List.get(0);
+        String cara2 = cubo1List.get(1);
+        String cara3 = cubo1List.get(2);
+        String cara4 = cubo1List.get(3);
+        String cara5 = cubo1List.get(4);
+        String cara6 = cubo1List.get(5);
+
+        Cubo1 cubo = new Cubo1(cara1, cara2, cara3, cara4, cara5, cara6);
+        cuboSolucion1.add(cubo);
+        
+        // Imprimir los datos contenidos en cuboSolucion1
+        System.out.println("Datos en cuboSolucion1:");
+        for (Cubo1 cuboActual : cuboSolucion1) {
+            System.out.println("Cara1: " + cuboActual.getCara1Cubo1());
+            System.out.println("Cara2: " + cuboActual.getCara2Cubo1());
+            System.out.println("Cara3: " + cuboActual.getCara3Cubo1());
+            System.out.println("Cara4: " + cuboActual.getCara4Cubo1());
+            System.out.println("Cara5: " + cuboActual.getCara5Cubo1());
+            System.out.println("Cara6: " + cuboActual.getCara6Cubo1());
+            System.out.println();
+        }
+    } else {
+        System.err.println("No hay suficientes elementos en cubo1List para crear un objeto Cubo1.");
+    }
+}
+public static void llenarCuboSolucion2(LinkedList<String> cubo2List) {
+    // Asegura que haya suficientes elementos en cubo1List para crear un objeto Cubo1
+    if (cubo2List.size() >= 6) {
+        String cara1 = cubo2List.get(0);
+        String cara2 = cubo2List.get(1);
+        String cara3 = cubo2List.get(2);
+        String cara4 = cubo2List.get(3);
+        String cara5 = cubo2List.get(4);
+        String cara6 = cubo2List.get(5);
+
+        Cubo2 cubo = new Cubo2(cara1, cara2, cara3, cara4, cara5, cara6);
+        cuboSolucion2.add(cubo);
+        
+        // Imprimir los datos contenidos en cuboSolucion1
+        System.out.println("Datos en cuboSolucion2:");
+        for (Cubo2 cuboActual : cuboSolucion2) {
+            System.out.println("Cara1: " + cuboActual.getCara1Cubo2());
+            System.out.println("Cara2: " + cuboActual.getCara2Cubo2());
+            System.out.println("Cara3: " + cuboActual.getCara3Cubo2());
+            System.out.println("Cara4: " + cuboActual.getCara4Cubo2());
+            System.out.println("Cara5: " + cuboActual.getCara5Cubo2());
+            System.out.println("Cara6: " + cuboActual.getCara6Cubo2());
+            System.out.println();
+        }
+    } else {
+        System.err.println("No hay suficientes elementos en cubo2List para crear un objeto Cubo1.");
+    }
+}
+public static void llenarCuboSolucion3(LinkedList<String> cubo3List) {
+    // Asegura que haya suficientes elementos en cubo1List para crear un objeto Cubo1
+    if (cubo3List.size() >= 6) {
+        String cara1 = cubo3List.get(0);
+        String cara2 = cubo3List.get(1);
+        String cara3 = cubo3List.get(2);
+        String cara4 = cubo3List.get(3);
+        String cara5 = cubo3List.get(4);
+        String cara6 = cubo3List.get(5);
+
+        Cubo3 cubo = new Cubo3(cara1, cara2, cara3, cara4, cara5, cara6);
+        cuboSolucion3.add(cubo);
+        
+        // Imprimir los datos contenidos en cuboSolucion1
+        System.out.println("Datos en cuboSolucion3:");
+        for (Cubo3 cuboActual : cuboSolucion3) {
+            System.out.println("Cara1: " + cuboActual.getCara1Cubo3());
+            System.out.println("Cara2: " + cuboActual.getCara2Cubo3());
+            System.out.println("Cara3: " + cuboActual.getCara3Cubo3());
+            System.out.println("Cara4: " + cuboActual.getCara4Cubo3());
+            System.out.println("Cara5: " + cuboActual.getCara5Cubo3());
+            System.out.println("Cara6: " + cuboActual.getCara6Cubo3());
+            System.out.println();
+        }
+    } else {
+        System.err.println("No hay suficientes elementos en cubo3List para crear un objeto Cubo1.");
+    }
+}
+public static void llenarCuboSolucion4(LinkedList<String> cubo4List) {
+    // Asegura que haya suficientes elementos en cubo1List para crear un objeto Cubo1
+    if (cubo4List.size() >= 6) {
+        String cara1 = cubo4List.get(0);
+        String cara2 = cubo4List.get(1);
+        String cara3 = cubo4List.get(2);
+        String cara4 = cubo4List.get(3);
+        String cara5 = cubo4List.get(4);
+        String cara6 = cubo4List.get(5);
+
+        Cubo4 cubo = new Cubo4(cara1, cara2, cara3, cara4, cara5, cara6);
+        cuboSolucion4.add(cubo);
+        
+        // Imprimir los datos contenidos en cuboSolucion1
+        System.out.println("Datos en cuboSolucion4:");
+        for (Cubo4 cuboActual : cuboSolucion4) {
+            System.out.println("Cara1: " + cuboActual.getCara1Cubo4());
+            System.out.println("Cara2: " + cuboActual.getCara2Cubo4());
+            System.out.println("Cara3: " + cuboActual.getCara3Cubo4());
+            System.out.println("Cara4: " + cuboActual.getCara4Cubo4());
+            System.out.println("Cara5: " + cuboActual.getCara5Cubo4());
+            System.out.println("Cara6: " + cuboActual.getCara6Cubo4());
+            System.out.println();
+        }
+    } else {
+        System.err.println("No hay suficientes elementos en cubo4List para crear un objeto Cubo1.");
+    }
+}
+    private void cara1Cubo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cara1Cubo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cara1Cubo1ActionPerformed
+
+    private void cara5Cubo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cara5Cubo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cara5Cubo2ActionPerformed
+
+    private void cara3Cubo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cara3Cubo3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cara3Cubo3ActionPerformed
    
     private boolean esColorValido(String color) {
         // Convertir el color ingresado a minúsculas para comparación
@@ -683,9 +876,7 @@ public void establecerValoresDesdeTemporales() {
         JOptionPane.showMessageDialog(null, "Se ingresó un color inválido en el cubo 1", "Error de Color", JOptionPane.ERROR_MESSAGE);
         return; // Regresar al método anterior después de mostrar el mensaje de error
         
-    }
-    
-        
+    } 
 }
     
     public void ObtenerCarasCubo2(LinkedList<String> cubo2List) {

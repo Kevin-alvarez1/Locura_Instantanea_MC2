@@ -32,7 +32,7 @@ public VistaDeCubos() {
     setVisible(true);
     setLocationRelativeTo(null);
     setResizable(false);
-    setTitle("Menu de selección");
+    setTitle("vista de cubos");
     
     // Crear un botón y agregarlo al JPanel o JFrame de tu interfaz
     JButton leerListaButton = new JButton("Leer Lista");
@@ -58,7 +58,6 @@ public VistaDeCubos() {
         CaraNumeroLabel = new javax.swing.JLabel();
         OrdenarCubosBoton = new javax.swing.JButton();
         ComprobarBoton = new javax.swing.JButton();
-        rendirseBoton = new javax.swing.JButton();
         regresarBoton = new javax.swing.JButton();
         VerSiguienteCuboBoton = new javax.swing.JButton();
         anteriorBotonCara = new javax.swing.JButton();
@@ -80,7 +79,7 @@ public VistaDeCubos() {
 
         CuboNumeroLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         CuboNumeroLabel.setForeground(new java.awt.Color(0, 0, 0));
-        CuboNumeroLabel.setText("Cubo: 1");
+        CuboNumeroLabel.setText("Cubo: ");
 
         CaraNumeroLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         CaraNumeroLabel.setForeground(new java.awt.Color(0, 0, 0));
@@ -110,14 +109,20 @@ public VistaDeCubos() {
         OrdenarCubosBoton.setBackground(new java.awt.Color(153, 255, 204));
         OrdenarCubosBoton.setForeground(new java.awt.Color(0, 0, 0));
         OrdenarCubosBoton.setText("Ordenar cubos");
+        OrdenarCubosBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrdenarCubosBotonActionPerformed(evt);
+            }
+        });
 
         ComprobarBoton.setBackground(new java.awt.Color(153, 255, 153));
         ComprobarBoton.setForeground(new java.awt.Color(0, 0, 0));
-        ComprobarBoton.setText("Comprobar Solución");
-
-        rendirseBoton.setBackground(new java.awt.Color(255, 153, 153));
-        rendirseBoton.setForeground(new java.awt.Color(0, 0, 0));
-        rendirseBoton.setText("Me rindo");
+        ComprobarBoton.setText("Tutorial");
+        ComprobarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComprobarBotonActionPerformed(evt);
+            }
+        });
 
         regresarBoton.setText("Regresar");
         regresarBoton.addActionListener(new java.awt.event.ActionListener() {
@@ -181,19 +186,16 @@ public VistaDeCubos() {
                         .addComponent(VerSiguienteCuboBoton)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(regresarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ComprobarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(rendirseBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(ComprobarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(regresarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(siguienteBotonCara, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +223,6 @@ public VistaDeCubos() {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(regresarBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(OrdenarCubosBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rendirseBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(VerSiguienteCuboBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -330,6 +331,19 @@ public void paintComponent(Graphics g) {
             seleccionarCuboYLeerLista();
             repaint();
     }//GEN-LAST:event_VerSiguienteCuboBotonActionPerformed
+
+    private void OrdenarCubosBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdenarCubosBotonActionPerformed
+        // TODO add your handling code here:
+           OrdenarCubos Aparece = new OrdenarCubos();
+           Aparece.setVisible(true);
+           this.dispose();  
+    }//GEN-LAST:event_OrdenarCubosBotonActionPerformed
+
+    private void ComprobarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprobarBotonActionPerformed
+        tutorialFrame Aparece = new tutorialFrame();
+        Aparece.setVisible(true);
+        this.dispose();   
+    }//GEN-LAST:event_ComprobarBotonActionPerformed
 public void paint(Graphics g) {
     super.paintComponents(g);
     
@@ -474,7 +488,6 @@ public void paint(Graphics g) {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panelParaCuadrado;
     private javax.swing.JButton regresarBoton;
-    private javax.swing.JButton rendirseBoton;
     private javax.swing.JButton siguienteBotonCara;
     // End of variables declaration//GEN-END:variables
 }

@@ -57,6 +57,11 @@ public class Menu_Opciones extends javax.swing.JFrame {
         });
 
         TutorialBoton.setText("Tutorial");
+        TutorialBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TutorialBotonActionPerformed(evt);
+            }
+        });
 
         CerrarProgramaBoton.setText("Cerrar el programa");
         CerrarProgramaBoton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +119,7 @@ public class Menu_Opciones extends javax.swing.JFrame {
 
     private void CerrarProgramaBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarProgramaBotonActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Gracias por jugar 😊", "", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Gracias por jugar 😊", "Game Over", JOptionPane.INFORMATION_MESSAGE);
    
         System.exit(0);
            
@@ -127,6 +132,13 @@ public class Menu_Opciones extends javax.swing.JFrame {
            this.dispose();
      
     }//GEN-LAST:event_JuegoNuevoBotonActionPerformed
+
+    private void TutorialBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TutorialBotonActionPerformed
+        // TODO add your handling code here:
+      tutorialFrame Aparece = new tutorialFrame();
+        Aparece.setVisible(true);
+           this.dispose();   
+    }//GEN-LAST:event_TutorialBotonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

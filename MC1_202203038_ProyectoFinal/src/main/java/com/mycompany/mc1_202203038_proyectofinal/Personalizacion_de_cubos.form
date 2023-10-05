@@ -522,16 +522,37 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara1Cubo1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="rojo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cara1Cubo1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="cara2Cubo1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="rojo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara3Cubo1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="blanco"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara4Cubo1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="amarillo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara5Cubo1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="amarillo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara6Cubo1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="verde"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
@@ -600,8 +621,17 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara5Cubo2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="amarillo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cara5Cubo2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="cara6Cubo2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="verde"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
@@ -659,6 +689,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara1Cubo2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="amarillo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel17">
           <Properties>
@@ -672,14 +705,29 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara2Cubo2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="rojo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara3Cubo2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="amarillo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara4Cubo2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="verde"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara5Cubo3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="verde"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara6Cubo3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="rojo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel18">
           <Properties>
@@ -737,6 +785,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara1Cubo3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="blanco"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel23">
           <Properties>
@@ -750,14 +801,32 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara2Cubo3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="rojo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara3Cubo3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="amarillo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cara3Cubo3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="cara4Cubo3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="amarillo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara5Cubo4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="amarillo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara6Cubo4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="verde"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel24">
           <Properties>
@@ -815,6 +884,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara1Cubo4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="blanco"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel29">
           <Properties>
@@ -828,10 +900,19 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara2Cubo4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="rojo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara3Cubo4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="blanco"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cara4Cubo4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="verde"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="VerCubosBoton">
           <Properties>
