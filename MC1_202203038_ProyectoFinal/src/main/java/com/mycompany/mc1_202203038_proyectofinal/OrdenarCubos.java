@@ -16,9 +16,13 @@ import static com.mycompany.mc1_202203038_proyectofinal.AppDataListas.subgrafoVe
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
@@ -172,7 +176,7 @@ public class OrdenarCubos extends javax.swing.JFrame {
             .addGroup(caraPanelArribaLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel4)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         caraPanelArribaLayout.setVerticalGroup(
             caraPanelArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,13 +266,12 @@ public class OrdenarCubos extends javax.swing.JFrame {
                                     .addComponent(seleccionarCuboBoton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(GiroBotonArriba, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(GiroBotonDer)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(GiroBotonDer, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(3, 3, 3)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(caraPanelArriba, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(comprobarRespuestaBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(comprobarRespuestaBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(caraPanelDer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -296,7 +299,7 @@ public class OrdenarCubos extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(caraPanelDer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(seleccionarCuboBoton))
+                    .addComponent(seleccionarCuboBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -503,7 +506,11 @@ public void intercambiarCarasVertica4(LinkedList<Cubo4> cuboSolucion4) {
             System.out.println("Ningún cubo seleccionado");
         } 
     }//GEN-LAST:event_GiroBotonDerActionPerformed
-
+    public static String[][] matrizAristas;
+    public static String[][] matrizAristasCubo1;
+    public static String[][] matrizAristasCubo2;
+    public static String[][] matrizAristasCubo3;
+    public static String[][] matrizAristasCubo4;
     private void comprobarRespuestaBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comprobarRespuestaBotonActionPerformed
         // TODO add your handling code here:
         //este metodo sirve para ver el grado de los vertices
@@ -518,18 +525,97 @@ public void intercambiarCarasVertica4(LinkedList<Cubo4> cuboSolucion4) {
             LinkedList<String> aristasCubo2 = compararCarasYCrearAristas2(cuboSolucion2);
             LinkedList<String> aristasCubo3 = compararCarasYCrearAristas3(cuboSolucion3);
             LinkedList<String> aristasCubo4 = compararCarasYCrearAristas4(cuboSolucion4);     
-
-        copiarPrimerDatoASubgrafo(subgrafoVertical, aristasCubo1);
+        ordenDeRespuestas Aparece = new ordenDeRespuestas();
+        Aparece.setVisible(true);
+        this.dispose();
+        /*
+        /*copiarPrimerDatoASubgrafo(subgrafoVertical, aristasCubo1);
         copiarPrimerDatoASubgrafo2(subgrafoVertical, aristasCubo2,aristasCubo1);
         copiarPrimerDatoASubgrafo3(subgrafoVertical, aristasCubo2, aristasCubo1, aristasCubo3);
         copiarPrimerDatoASubgrafo4(subgrafoVertical,aristasCubo4);
+       
+        matrizAristasCubo1 = crearMatrizAristas(aristasCubo1);
+        matrizAristasCubo2 = crearMatrizAristas(aristasCubo2);
+        matrizAristasCubo3 = crearMatrizAristas(aristasCubo3);
+        matrizAristasCubo4 = crearMatrizAristas(aristasCubo4);
+
+           // Imprime las LinkedList
+        System.out.println("Aristas Cubo 1: " + aristasCubo1);
+        System.out.println("Aristas Cubo 2: " + aristasCubo2);
+        System.out.println("Aristas Cubo 3: " + aristasCubo3);
+        System.out.println("Aristas Cubo 4: " + aristasCubo4);
         
-         // Imprimir subgrafoVertical
-         System.out.println("subGrafo con todo");
-        for (String arista : subgrafoVertical) {
-            System.out.println(arista);
-        }
+        llenarAristas();
+    // Supongamos que este es tu bucle para esperar hasta que las aristas se llenen
+    int intentos = 0; // Inicializa el contador de intentos
+    final int MAX_INTENTOS = 800000; // Establece el número máximo de intentos
+
+    while ((arista1 == null || arista2 == null || arista3 == null || arista4 == null) && intentos < MAX_INTENTOS) {
+        llenarAristas();
+        intentos++; // Incrementa el contador de intentos en cada iteración
+    }
+        llenarSubgrafoVertical();
+
+    // Puedes imprimir o realizar otras operaciones con subgrafoVertical si es necesario
+    System.out.println("Subgrafo Vertical: " + subgrafoVertical);
+    
+
+      // Imprimir las matrices de aristas
+        System.out.println("Matriz de aristas para aristasCubo1:");
+        imprimirMatriz(matrizAristasCubo1);
+
+        System.out.println("Matriz de aristas para aristasCubo2:");
+        imprimirMatriz(matrizAristasCubo2);
+
+        System.out.println("Matriz de aristas para aristasCubo3:");
+        imprimirMatriz(matrizAristasCubo3);
+
+        System.out.println("Matriz de aristas para aristasCubo4:");
+        imprimirMatriz(matrizAristasCubo4);
+            // Por ejemplo, puedes imprimir las aristas generadas:
+            System.out.println("Aristas:");
+            System.out.println("Arista 1: " + arista1);
+            System.out.println("Arista 2: " + arista2);
+            System.out.println("Arista 3: " + arista3);
+            System.out.println("Arista 4: " + arista4);
+                System.out.println("cuboLabels");
+                System.out.println("cuboLabel1: " + cuboLabel1);
+                System.out.println("cuboLabel2: " + cuboLabel2);
+                System.out.println("cuboLabel3: " + cuboLabel3);
+                System.out.println("cuboLabel4: " + cuboLabel4);
+         */
     }//GEN-LAST:event_comprobarRespuestaBotonActionPerformed
+public static void llenarSubgrafoVertical() {
+    // Añadir los datos de las variables arista1, arista2, arista3 y arista4 a la LinkedList
+    subgrafoVertical.add(arista1);
+    subgrafoVertical.add(arista2);
+    subgrafoVertical.add(arista3);
+    subgrafoVertical.add(arista4);
+}  
+    public static String[][] crearMatrizAristas(LinkedList<String> aristasCubo) {
+        int totalAristas = aristasCubo.size();
+        String[][] matriz = new String[totalAristas][2];
+
+        int fila = 0;
+
+        // Llenar la matriz con los datos de aristasCubo
+        for (String arista : aristasCubo) {
+            String[] partes = arista.split("-");
+            matriz[fila][0] = partes[0];
+            matriz[fila][1] = partes[1];
+            fila++;
+        }
+
+        return matriz;
+    }
+
+    public static void imprimirMatriz(String[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            System.out.println(matriz[i][0] + "-" + matriz[i][1]);
+        }
+    }
+
+
 //Metodos para las aristas:   
 public static LinkedList<String> compararCarasYCrearAristas(LinkedList<Cubo1> cuboSolucion1) {
 
@@ -564,7 +650,6 @@ public static LinkedList<String> compararCarasYCrearAristas(LinkedList<Cubo1> cu
     }
 
     return aristasCubo1;
-    
 }
 public static LinkedList<String> compararCarasYCrearAristas2(LinkedList<Cubo2> cuboSolucion2) {
     LinkedList<String> aristasCubo2 = new LinkedList<>();
@@ -667,9 +752,368 @@ public static LinkedList<String> compararCarasYCrearAristas4(LinkedList<Cubo4> c
         }
     }
 
-    return aristasCubo3;
+    return aristasCubo4;
+}
+    public static String[][] crearMatrizAristas(
+            LinkedList<String> aristasCubo1,
+            LinkedList<String> aristasCubo2,
+            LinkedList<String> aristasCubo3,
+            LinkedList<String> aristasCubo4) {
+
+        int totalAristas = aristasCubo1.size() + aristasCubo2.size() + aristasCubo3.size() + aristasCubo4.size();
+        String[][] matriz = new String[totalAristas + 4][2]; // Añadir espacio para las filas de "aristaCubo terminada"
+
+        int fila = 0;
+
+        // Llenar la matriz con los datos de aristasCubo1
+        for (String arista : aristasCubo1) {
+            String[] partes = arista.split("-");
+            matriz[fila][0] = partes[0];
+            matriz[fila][1] = partes[1];
+            fila++;
+        }
+
+        // Agregar fila de "aristaCubo terminada" para aristasCubo1
+        matriz[fila][0] = "aristaCubo terminada";
+        matriz[fila][1] = "aristaCubo terminada";
+
+        fila++;
+
+        // Llenar la matriz con los datos de aristasCubo2
+        for (String arista : aristasCubo2) {
+            String[] partes = arista.split("-");
+            matriz[fila][0] = partes[0];
+            matriz[fila][1] = partes[1];
+            fila++;
+        }
+
+        // Agregar fila de "aristaCubo terminada" para aristasCubo2
+        matriz[fila][0] = "aristaCubo terminada";
+        matriz[fila][1] = "aristaCubo terminada";
+        fila++;
+
+        // Llenar la matriz con los datos de aristasCubo3
+        for (String arista : aristasCubo3) {
+            String[] partes = arista.split("-");
+            matriz[fila][0] = partes[0];
+            matriz[fila][1] = partes[1];
+            fila++;
+        }
+
+        // Agregar fila de "aristaCubo terminada" para aristasCubo3
+        matriz[fila][0] = "aristaCubo terminada";
+        matriz[fila][1] = "aristaCubo terminada";
+        fila++;
+
+        // Llenar la matriz con los datos de aristasCubo4
+        for (String arista : aristasCubo4) {
+            String[] partes = arista.split("-");
+            matriz[fila][0] = partes[0];
+            matriz[fila][1] = partes[1];
+            fila++;
+        }
+
+        // Agregar fila de "aristaCubo terminada" para aristasCubo4
+        matriz[fila][0] = "aristaCubo terminada";
+        matriz[fila][1] = "aristaCubo terminada";
+        return matriz;
+    }
+
+public static String arista1;
+public static String arista2;
+public static String arista3;
+public static String arista4;
+
+    public static void generarAristasDistintas() {
+        // Crear una lista con todos los colores posibles
+        String[] colores = { "rojo", "blanco", "verde", "amarillo" };
+
+        // Crear una lista de aristas generadas
+        LinkedList<String> aristasGeneradas = new LinkedList<>();
+
+        // Inicializar un generador de números aleatorios
+        Random random = new Random();
+
+        // Generar las 4 aristas distintas
+        for (int i = 0; i < 4; i++) {
+            String color1, color2;
+            do {
+                // Elegir aleatoriamente dos colores
+                color1 = colores[random.nextInt(colores.length)];
+                color2 = colores[random.nextInt(colores.length)];
+            } while (color1.equals(color2) || countColorOccurrences(aristasGeneradas, color1) >= 2 || countColorOccurrences(aristasGeneradas, color2) >= 2);
+
+            // Crear la arista con los colores elegidos
+            String arista = color1 + "-" + color2;
+
+            // Agregar la arista a la lista de aristas generadas
+            aristasGeneradas.add(arista);
+
+            // Asignar la arista a la variable correspondiente
+            switch (i) {
+                case 0:
+                    arista1 = arista;
+                    break;
+                case 1:
+                    arista2 = arista;
+                    break;
+                case 2:
+                    arista3 = arista;
+                    break;
+                case 3:
+                    arista4 = arista;
+                    break;
+            }
+        }
+    }
+
+    public static int countColorOccurrences(LinkedList<String> aristas, String color) {
+        int count = 0;
+        for (String arista : aristas) {
+            if (arista.contains(color)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+public static int rojoUsado;
+public static int blancoUsado; 
+public static int verdeUsado;
+public static int amarilloUsado; 
+
+public static String cuboLabel1;
+public static String cuboLabel2;
+public static String cuboLabel3;
+public static String cuboLabel4;
+
+
+public static void llenarAristas() {
+
+    Random random = new Random();
+    int[] coloresUsados = new int[4]; // Contadores de colores usados
+    Set<String> aristasSeleccionadas = new HashSet<>();
+    List<LinkedList<String>> cubosRestantes = new ArrayList<>(Arrays.asList(aristasCubo1, aristasCubo2, aristasCubo3, aristasCubo4));
+
+    for (int i = 0; i < 4; i++) {
+        LinkedList<String> matriz = cubosRestantes.get(i);
+
+        if (matriz.isEmpty()) {
+            // Si la matriz está vacía, selecciona una de las otras matrices restantes
+            for (int j = 0; j < cubosRestantes.size(); j++) {
+                if (i != j && !cubosRestantes.get(j).isEmpty()) {
+                    matriz = cubosRestantes.get(j);
+                    break;
+                }
+            }
+        }
+
+        if (!matriz.isEmpty()) {
+            int index = random.nextInt(matriz.size());
+            String arista = matriz.get(index);
+
+            String[] colores = arista.split("-");
+            boolean sePuedeUsar = true;
+
+            for (String color : colores) {
+                int colorIndex = getColorIndex(color);
+                if (coloresUsados[colorIndex] >= 2) {
+                    sePuedeUsar = false;
+                    break;
+                }
+            }
+
+            if (sePuedeUsar && !aristasSeleccionadas.contains(arista) && !aristasSeleccionadas.contains(invertirArista(arista))) {
+                matriz.remove(index); // Elimina la arista de la matriz
+
+                // Agrega la etiqueta de la arista (aristaX)
+                String aristaConEtiqueta = arista + " (arista" + (i + 1) + ")";
+
+                asignarArista(i + 1, aristaConEtiqueta);
+                aristasSeleccionadas.add(aristaConEtiqueta);
+                aristasSeleccionadas.add(invertirArista(aristaConEtiqueta));
+
+                // Asigna el valor de arista a la variable correspondiente
+                switch (i + 1) {
+                    case 1:
+                        cuboLabel1 = aristaConEtiqueta;
+                        break;
+                    case 2:
+                        cuboLabel2 = aristaConEtiqueta;
+                        break;
+                    case 3:
+                        cuboLabel3 = aristaConEtiqueta;
+                        break;
+                    case 4:
+                        cuboLabel4 = aristaConEtiqueta;
+                        break;
+                    default:
+                        break;
+                }
+
+                for (String color : colores) {
+                    int colorIndex = getColorIndex(color);
+                    coloresUsados[colorIndex]++;
+                }
+            } else {
+                matriz.remove(index); // Elimina la arista de la matriz incluso si no se puede usar
+            }
+        }
+    }
+}
+public static String invertirArista(String arista) {
+    String[] colores = arista.split("-");
+    return colores[1] + "-" + colores[0];
+}
+public static String obtenerArista(int numero) {
+    switch (numero) {
+        case 1:
+            return arista1;
+        case 2:
+            return arista2;
+        case 3:
+            return arista3;
+        case 4:
+            return arista4;
+        default:
+            return null;
+    }
+}
+    public static int getColorIndex(String color) {
+        switch (color) {
+            case "rojo":
+                return 0;
+            case "blanco":
+                return 1;
+            case "verde":
+                return 2;
+            case "amarillo":
+                return 3;
+            default:
+                return -1;
+        }
+    }
+
+    public static void asignarArista(int numero, String arista) {
+        switch (numero) {
+            case 1:
+                arista1 = arista;
+                break;
+            case 2:
+                arista2 = arista;
+                break;
+            case 3:
+                arista3 = arista;
+                break;
+            case 4:
+                arista4 = arista;
+                break;
+        }
+    }
+
+public static String[][] obtenerMatriz(int indice) {
+    switch (indice) {
+        case 2:
+            return matrizAristasCubo2;
+        case 3:
+            return matrizAristasCubo3;
+        case 4:
+            return matrizAristasCubo4;
+        default:
+            return null;
+    }
 }
 
+public static int obtenerIndiceMatriz(String arista) {
+    if (arista == null) {
+        return -1;
+    }
+
+    switch (arista) {
+        case "matrizAristasCubo2":
+            return 2;
+        case "matrizAristasCubo3":
+            return 3;
+        case "matrizAristasCubo4":
+            return 4;
+        default:
+            return -1;
+    }
+}
+public static String seleccionarArista(String[][] matrizAristas) {
+    if (matrizAristas == null) {
+        return null;
+    }
+
+    for (int i = 0; i < matrizAristas.length; i++) {
+        String[] fila = matrizAristas[i];
+        String color0 = fila[0];
+        String color1 = fila[1];
+
+        String arista = color0 + "-" + color1;
+        String aristaReversa = color1 + "-" + color0;
+
+        if (puedeSeleccionarArista(arista) && puedeSeleccionarArista(aristaReversa)) {
+            return arista;
+        }
+    }
+    return null;
+}
+public static String seleccionarAristaExcepto(String[][]... matricesExcluidas) {
+    List<String[][]> exclusiones = Arrays.asList(matricesExcluidas);
+    for (int i = 1; i <= 4; i++) {
+        if (!exclusiones.contains(obtenerMatriz(i))) {
+            String[][] matriz = obtenerMatriz(i);
+            String arista = seleccionarArista(matriz);
+            if (arista != null) {
+                return arista;
+            }
+        }
+    }
+    return null;
+}
+public static boolean puedeSeleccionarArista(String arista) {
+    String[] colores = arista.split("-");
+    return colores.length == 2 && puedeSeleccionarColor(colores[0]) && puedeSeleccionarColor(colores[1]);
+}
+
+public static void actualizarUsados(String arista) {
+    String[] colores = arista.split("-");
+    incrementarColorUsado(colores[0]);
+    incrementarColorUsado(colores[1]);
+}
+
+public static boolean puedeSeleccionarColor(String color) {
+    switch (color) {
+        case "rojo":
+            return rojoUsado < 2;
+        case "blanco":
+            return blancoUsado < 2;
+        case "verde":
+            return verdeUsado < 2;
+        case "amarillo":
+            return amarilloUsado < 2;
+        default:
+            return false;
+    }
+}
+
+public static void incrementarColorUsado(String color) {
+    switch (color) {
+        case "rojo":
+            rojoUsado++;
+            break;
+        case "blanco":
+            blancoUsado++;
+            break;
+        case "verde":
+            verdeUsado++;
+            break;
+        case "amarillo":
+            amarilloUsado++;
+            break;
+    }
+}
 
 private int Rojo;
 private int Blanco;
@@ -1065,6 +1509,7 @@ public static void copiarPrimerDatoASubgrafo2(LinkedList<String> subgrafoVertica
         System.out.println(mensaje);
     }
 }
+
 public static void copiarPrimerDatoASubgrafo3(
     LinkedList<String> subgrafoVertical, 
     LinkedList<String> aristasCubo2, 

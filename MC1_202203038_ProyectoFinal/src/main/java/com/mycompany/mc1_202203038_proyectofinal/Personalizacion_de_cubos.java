@@ -297,11 +297,16 @@ public void establecerValoresDesdeTemporales() {
             }
         });
 
-        cara2Cubo1.setText("rojo");
+        cara2Cubo1.setText("blanco");
 
         cara3Cubo1.setText("blanco");
 
-        cara4Cubo1.setText("amarillo");
+        cara4Cubo1.setText("blanco");
+        cara4Cubo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cara4Cubo1ActionPerformed(evt);
+            }
+        });
 
         cara5Cubo1.setText("amarillo");
 
@@ -360,7 +365,7 @@ public void establecerValoresDesdeTemporales() {
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Cara 5");
 
-        cara1Cubo2.setText("amarillo");
+        cara1Cubo2.setText("rojo");
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
@@ -411,7 +416,7 @@ public void establecerValoresDesdeTemporales() {
             }
         });
 
-        cara4Cubo3.setText("amarillo");
+        cara4Cubo3.setText("verde");
 
         cara5Cubo4.setText("amarillo");
 
@@ -837,6 +842,10 @@ public static void llenarCuboSolucion4(LinkedList<String> cubo4List) {
     private void cara3Cubo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cara3Cubo3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cara3Cubo3ActionPerformed
+
+    private void cara4Cubo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cara4Cubo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cara4Cubo1ActionPerformed
    
     private boolean esColorValido(String color) {
         // Convertir el color ingresado a minúsculas para comparación

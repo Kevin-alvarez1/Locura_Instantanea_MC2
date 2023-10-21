@@ -14,9 +14,11 @@ com\mycompany\mc1_202203038_proyectofinal\Cubo1.class
 com\mycompany\mc1_202203038_proyectofinal\OrdenarCubos.class
 com\mycompany\mc1_202203038_proyectofinal\VistaDeCubos$5.class
 com\mycompany\mc1_202203038_proyectofinal\Personalizacion_de_cubos.class
+com\mycompany\mc1_202203038_proyectofinal\Personalizacion_de_cubos$7.class
 com\mycompany\mc1_202203038_proyectofinal\OrdenarCubos$6.class
 com\mycompany\mc1_202203038_proyectofinal\VistaDeCubos$7.class
 com\mycompany\mc1_202203038_proyectofinal\Menu_Opciones$4.class
+com\mycompany\mc1_202203038_proyectofinal\ordenDeRespuestas$2.class
 com\mycompany\mc1_202203038_proyectofinal\Personalizacion_de_cubos$2.class
 com\mycompany\mc1_202203038_proyectofinal\VistaDeCubos$2.class
 com\mycompany\mc1_202203038_proyectofinal\Cubo4.class
@@ -29,6 +31,8 @@ com\mycompany\mc1_202203038_proyectofinal\tutorialFrame$3.class
 com\mycompany\mc1_202203038_proyectofinal\VistaDeCubos$4.class
 com\mycompany\mc1_202203038_proyectofinal\VistaDeCubos.class
 com\mycompany\mc1_202203038_proyectofinal\tutorialFrame.class
+com\mycompany\mc1_202203038_proyectofinal\ordenDeRespuestas$1.class
+com\mycompany\mc1_202203038_proyectofinal\ordenDeRespuestas.class
 com\mycompany\mc1_202203038_proyectofinal\Personalizacion_de_cubos$3.class
 com\mycompany\mc1_202203038_proyectofinal\Personalizacion_de_cubos$1.class
 com\mycompany\mc1_202203038_proyectofinal\VistaDeCubos$3.class
